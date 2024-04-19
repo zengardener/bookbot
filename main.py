@@ -26,8 +26,12 @@ def main():
 
 def count_letters(file_contents):
     letters = []
+    counted_letters = {}
     lowerized_letters = file_contents.lower()
-    letter = list(lowerized_letters)
-    return len(letters)
+    letters = list(set(lowerized_letters))
+    for i in letters:
+        counted_letters[i] = lowerized_letters.count(i)
+
+    return counted_letters
 
 main()
